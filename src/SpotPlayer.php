@@ -34,6 +34,11 @@ use GuzzleHttp\Exception\RequestException;
 class SpotPlayer
 {
     /**
+     * Package version
+     */
+    const VERSION = '1.1.0';
+
+    /**
      * API Base URL
      */
     const BASE_URL = 'https://panel.spotplayer.ir';
@@ -100,6 +105,16 @@ class SpotPlayer
     }
 
     /**
+     * Get package version
+     * 
+     * @return string
+     */
+    public static function getVersion()
+    {
+        return self::VERSION;
+    }
+
+    /**
      * Get or create static instance
      * 
      * @param string|null $apiKey API key for static instance
@@ -143,7 +158,36 @@ class SpotPlayer
     public function createLicense(array $licenseData, $apiKey = null)
     {
         $apiKey = $apiKey ?? $this->apiKey;
+        return $this->doCreateLicense($licenseData, $apiKey);
+    }
 
+    /**
+     * Edit an existing license via API
+     * 
+     * @param string $licenseId License ID to edit
+     * @param array $licenseData License data to update
+     * @param string|null $apiKey Optional API key (for static calls)
+     * @return array Response data
+     * @throws \InvalidArgumentException If license ID is invalid
+     * @throws \RuntimeException If API request fails
+     */
+    public function editLicense($licenseId, array $licenseData, $apiKey = null)
+    {
+        $apiKey = $apiKey ?? $this->apiKey;
+        return $this->doEditLicense($licenseId, $licenseData, $apiKey);
+    }
+
+    /**
+     * Internal method to create a license
+     * 
+     * @param array $licenseData License data array
+     * @param string $apiKey API key
+     * @return array Response data containing _id, key, and url
+     * @throws \InvalidArgumentException If required fields are missing
+     * @throws \RuntimeException If API request fails
+     */
+    private function doCreateLicense(array $licenseData, $apiKey)
+    {
         if ($apiKey === null) {
             throw new \RuntimeException('API key is required. Set it via constructor, setApiKey(), or pass as parameter.');
         }
@@ -183,19 +227,17 @@ class SpotPlayer
     }
 
     /**
-     * Edit an existing license via API
+     * Internal method to edit a license
      * 
      * @param string $licenseId License ID to edit
      * @param array $licenseData License data to update
-     * @param string|null $apiKey Optional API key (for static calls)
+     * @param string $apiKey API key
      * @return array Response data
      * @throws \InvalidArgumentException If license ID is invalid
      * @throws \RuntimeException If API request fails
      */
-    public function editLicense($licenseId, array $licenseData, $apiKey = null)
+    private function doEditLicense($licenseId, array $licenseData, $apiKey)
     {
-        $apiKey = $apiKey ?? $this->apiKey;
-
         if ($apiKey === null) {
             throw new \RuntimeException('API key is required. Set it via constructor, setApiKey(), or pass as parameter.');
         }
@@ -280,7 +322,8 @@ class SpotPlayer
     public static function createLicenseStatic(array $licenseData, $apiKey = null)
     {
         $instance = self::getStaticInstance($apiKey);
-        return $instance->createLicense($licenseData, $apiKey);
+        $finalApiKey = $apiKey ?? $instance->getApiKey();
+        return $instance->doCreateLicense($licenseData, $finalApiKey);
     }
 
     /**
@@ -296,27 +339,29 @@ class SpotPlayer
     public static function editLicenseStatic($licenseId, array $licenseData, $apiKey = null)
     {
         $instance = self::getStaticInstance($apiKey);
-        return $instance->editLicense($licenseId, $licenseData, $apiKey);
+        $finalApiKey = $apiKey ?? $instance->getApiKey();
+        return $instance->doEditLicense($licenseId, $licenseData, $finalApiKey);
     }
 
     /**
      * Magic method to support static calls to instance methods
+     * Allows calling static methods with the same name as instance methods
      * 
      * @param string $method Method name
      * @param array $arguments Method arguments
      * @return mixed
+     * @throws \BadMethodCallException If method does not exist
      */
     public static function __callStatic($method, $arguments)
     {
-        // Map static method names to instance methods
+        // Map static method names to static methods
         $methodMap = [
-            'createLicense' => 'createLicense',
-            'editLicense' => 'editLicense'
+            'createLicense' => 'createLicenseStatic',
+            'editLicense' => 'editLicenseStatic'
         ];
 
         if (isset($methodMap[$method])) {
-            $instance = self::getStaticInstance();
-            return call_user_func_array([$instance, $methodMap[$method]], $arguments);
+            return call_user_func_array([self::class, $methodMap[$method]], $arguments);
         }
 
         throw new \BadMethodCallException("Method {$method} does not exist or is not accessible statically.");

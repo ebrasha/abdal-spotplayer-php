@@ -97,6 +97,10 @@ echo "License URL: " . $result['url'] . "\n";
 
 ### Method 2: Using Static Methods
 
+You can use static methods in two ways:
+
+**Option A: Set API key first, then use static methods**
+
 ```php
 <?php
 
@@ -107,7 +111,7 @@ use Abdal\SpotPlayer\SpotPlayer;
 // Set API key once
 SpotPlayer::setStaticApiKey('YOUR_API_KEY_HERE');
 
-// Use static methods
+// Use static methods (via __callStatic magic method)
 $licenseData = [
     'course' => ['5d2ee35bcddc092a304ae5eb'],
     'name' => 'customer-name',
@@ -119,6 +123,33 @@ $licenseData = [
 ];
 
 $result = SpotPlayer::createLicense($licenseData);
+```
+
+**Option B: Pass API key directly to static method**
+
+```php
+<?php
+
+require_once 'vendor/autoload.php';
+
+use Abdal\SpotPlayer\SpotPlayer;
+
+// Pass API key directly to the method
+$licenseData = [
+    'course' => ['5d2ee35bcddc092a304ae5eb'],
+    'name' => 'customer-name',
+    'watermark' => [
+        'texts' => [
+            ['text' => '09022223301']
+        ]
+    ]
+];
+
+// Using explicit static method
+$result = SpotPlayer::createLicenseStatic($licenseData, 'YOUR_API_KEY_HERE');
+
+// Or using magic method (same result)
+$result = SpotPlayer::createLicense($licenseData, 'YOUR_API_KEY_HERE');
 ```
 
 ### Creating a Test License
@@ -220,9 +251,13 @@ try {
 
 ## 🔧 API Methods
 
-### `createLicense(array $licenseData, string|null $apiKey = null): array`
+### `createLicense(array $licenseData, string|null $apiKey = null): array` (Instance Method)
 
-Creates a new license in SpotPlayer.
+Creates a new license in SpotPlayer. Can be called on an instance.
+
+### `createLicenseStatic(array $licenseData, string|null $apiKey = null): array` (Static Method)
+
+Creates a new license in SpotPlayer. Can be called statically. You can also use `SpotPlayer::createLicense()` which will automatically call this method via `__callStatic`.
 
 **Required Fields:**
 - `course` (array): Array of course IDs
@@ -240,9 +275,13 @@ Creates a new license in SpotPlayer.
 
 **Returns:** Array containing `_id`, `key`, and `url`
 
-### `editLicense(string $licenseId, array $licenseData, string|null $apiKey = null): array`
+### `editLicense(string $licenseId, array $licenseData, string|null $apiKey = null): array` (Instance Method)
 
-Edits an existing license. Only provided fields will be updated.
+Edits an existing license. Can be called on an instance. Only provided fields will be updated.
+
+### `editLicenseStatic(string $licenseId, array $licenseData, string|null $apiKey = null): array` (Static Method)
+
+Edits an existing license. Can be called statically. You can also use `SpotPlayer::editLicense()` which will automatically call this method via `__callStatic`. Only provided fields will be updated.
 
 **Parameters:**
 - `$licenseId` (string): The license ID to edit

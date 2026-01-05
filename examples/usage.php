@@ -152,21 +152,35 @@ try {
 SpotPlayer::setStaticApiKey($apiKey);
 
 try {
+    // Using magic method __callStatic (calls createLicenseStatic internally)
     $result = SpotPlayer::createLicense($licenseData);
-    echo "License created via static method!\n";
+    echo "License created via static method (using __callStatic)!\n";
+    echo "License ID: " . $result['_id'] . "\n";
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage() . "\n";
 }
 
 // Option B: Pass API key directly to static method
 try {
+    // Using explicit static method
     $result = SpotPlayer::createLicenseStatic($licenseData, $apiKey);
-    echo "License created via static method with API key parameter!\n";
+    echo "License created via explicit static method (createLicenseStatic)!\n";
+    echo "License ID: " . $result['_id'] . "\n";
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage() . "\n";
 }
 
-// Edit license using static method
+// Option C: Pass API key directly using magic method
+try {
+    // Using magic method with API key parameter
+    $result = SpotPlayer::createLicense($licenseData, $apiKey);
+    echo "License created via static method with API key parameter!\n";
+    echo "License ID: " . $result['_id'] . "\n";
+} catch (Exception $e) {
+    echo "Error: " . $e->getMessage() . "\n";
+}
+
+// Edit license using static method (magic method)
 try {
     $licenseId = '5dcab540796f5d4d48a6570f';
     $editData = [
@@ -174,7 +188,20 @@ try {
         'device' => ['p1' => 1]
     ];
     $result = SpotPlayer::editLicense($licenseId, $editData);
-    echo "License edited via static method!\n";
+    echo "License edited via static method (using __callStatic)!\n";
+} catch (Exception $e) {
+    echo "Error: " . $e->getMessage() . "\n";
+}
+
+// Edit license using explicit static method
+try {
+    $licenseId = '5dcab540796f5d4d48a6570f';
+    $editData = [
+        'name' => 'updated-customer-v2',
+        'device' => ['p1' => 1, 'p2' => 1]
+    ];
+    $result = SpotPlayer::editLicenseStatic($licenseId, $editData, $apiKey);
+    echo "License edited via explicit static method (editLicenseStatic)!\n";
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage() . "\n";
 }
