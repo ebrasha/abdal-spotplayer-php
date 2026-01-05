@@ -1,7 +1,7 @@
 {
     "name": "abdal/spotplayer-php",
     "description": "PHP API client for SpotPlayer Secure Media Player service with DRM support",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "type": "library",
     "keywords": [
         "spotplayer",
