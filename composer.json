@@ -1,0 +1,44 @@
+{
+    "name": "abdal/spotplayer-php",
+    "description": "PHP API client for SpotPlayer Secure Media Player service with DRM support",
+    "version": "1.0.0",
+    "type": "library",
+    "keywords": [
+        "spotplayer",
+        "drm",
+        "media-player",
+        "api",
+        "ebrasha",
+        "ebrahim-shafiei",
+        "license"
+    ],
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Ebrahim Shafiei",
+            "email": "Prof.Shafiei@Gmail.com",
+            "homepage": "https://github.com/ebrasha",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "guzzlehttp/guzzle": "^6.0|^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0|^8.0|^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Abdal\\SpotPlayer\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Abdal\\SpotPlayer\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
+
