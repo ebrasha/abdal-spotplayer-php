@@ -1,53 +1,61 @@
 # 🎬 Abdal SpotPlayer PHP
 
-**Language**: [English](README.md) | [فارسی](README.fa.md)
+**زبان**: [English](README.en.md) | [فارسی](README.md)
 
 [![License](https://img.shields.io/badge/license-GPL--2.0--or--later-blue.svg)](LICENSE)
 [![PHP Version](https://img.shields.io/badge/php-%3E%3D7.0-blue.svg)](https://php.net)
 [![Packagist](https://img.shields.io/packagist/v/abdal/spotplayer-php.svg)](https://packagist.org/packages/abdal/spotplayer-php)
 
-A professional PHP API client for **SpotPlayer** Secure Media Player service with Digital Rights Management (DRM) support. This package provides a clean and easy-to-use interface for managing licenses, creating test licenses, and editing existing licenses through the SpotPlayer API.
 
-## 🎯 Why This Software Was Created
 
-SpotPlayer is a specialized Secure Media Player focused on **Digital Rights Management (DRM)** and preventing **Piracy** and **Unauthorized Access**. This PHP package was created to simplify the integration of SpotPlayer API into PHP applications, allowing developers to:
+<div dir="rtl">
 
-- **Easily manage licenses** programmatically without manual dashboard operations
-- **Automate license creation** for e-commerce and course platforms
-- **Integrate DRM protection** into existing PHP applications
-- **Support both OOP and static method** usage patterns for flexibility
+یک کلاینت حرفه‌ای PHP برای سرویس **SpotPlayer** که یک پخش‌کننده رسانه امن با پشتیبانی از مدیریت حقوق دیجیتال (DRM) است. این پکیج رابطی ساده و کاربردی برای مدیریت لایسنس‌ها، ایجاد لایسنس‌های تستی و ویرایش لایسنس‌های موجود از طریق API اسپات پلیر فراهم می‌کند.
 
-Whether you're building an e-learning platform, video streaming service, or any application that requires protected media content, this package provides a robust and developer-friendly solution that helps users solve the problem of managing protected digital content licenses efficiently.
+## 🎯 چرا این نرم‌افزار ساخته شد
 
-## ✨ Features and Capabilities
+اسپات پلیر یک پخش‌کننده رسانه امن تخصصی است که تمرکز اصلی آن روی **مدیریت حقوق دیجیتال (DRM)** و جلوگیری از **سرقت محتوا** و **دسترسی غیرمجاز** می‌باشد. این پکیج PHP برای ساده‌سازی یکپارچه‌سازی API اسپات پلیر در برنامه‌های PHP ایجاد شده است و به توسعه‌دهندگان امکان می‌دهد تا:
 
-- ✅ **Dual Usage Patterns**: Support for both OOP instance-based and static method calls
-- ✅ **PHP 7+ Compatible**: Works with PHP 7.0 and higher versions
-- ✅ **GuzzleHttp Integration**: Professional HTTP client for reliable API communication
-- ✅ **License Management**: Create, edit, and manage SpotPlayer licenses
-- ✅ **Test License Support**: Easy creation of test licenses for development
-- ✅ **Comprehensive Validation**: Built-in validation for required fields
-- ✅ **Error Handling**: Detailed error messages and exception handling
-- ✅ **Type Safety**: Proper type hints and documentation
-- ✅ **PSR-4 Autoloading**: Standard Composer autoloading support
-- ✅ **Full API Coverage**: Complete support for all SpotPlayer license features including watermarks, device limits, and access controls
+- **مدیریت آسان لایسنس‌ها** به صورت برنامه‌نویسی بدون نیاز به عملیات دستی در داشبورد
+- **خودکارسازی ایجاد لایسنس** برای پلتفرم‌های تجارت الکترونیک و دوره‌های آموزشی
+- **یکپارچه‌سازی محافظت DRM** در برنامه‌های PHP موجود
+- **پشتیبانی از هر دو الگوی OOP و متد استاتیک** برای انعطاف‌پذیری بیشتر
 
-## 📦 Requirements
+چه در حال ساخت یک پلتفرم آموزش الکترونیک باشید، سرویس استریم ویدیو یا هر برنامه‌ای که نیاز به محتوای رسانه‌ای محافظت شده دارد، این پکیج راه‌حلی قوی و مناسب برای توسعه‌دهندگان ارائه می‌دهد که به کاربران کمک می‌کند مشکل مدیریت لایسنس‌های محتوای دیجیتال محافظت شده را به طور مؤثر حل کنند.
+
+## ✨ ویژگی‌ها و قابلیت‌ها
+
+- ✅ **الگوهای استفاده دوگانه**: پشتیبانی از هر دو روش فراخوانی مبتنی بر نمونه OOP و متد استاتیک
+- ✅ **سازگار با PHP 7+**: کار با PHP 7.0 و نسخه‌های بالاتر
+- ✅ **یکپارچه‌سازی GuzzleHttp**: کلاینت HTTP حرفه‌ای برای ارتباط قابل اعتماد با API
+- ✅ **مدیریت لایسنس**: ایجاد، ویرایش و مدیریت لایسنس‌های اسپات پلیر
+- ✅ **پشتیبانی از لایسنس تستی**: ایجاد آسان لایسنس‌های تستی برای توسعه
+- ✅ **اعتبارسنجی جامع**: اعتبارسنجی داخلی برای فیلدهای الزامی
+- ✅ **مدیریت خطا**: پیام‌های خطای دقیق و مدیریت استثنا
+- ✅ **امنیت نوع**: راهنمای نوع و مستندات مناسب
+- ✅ **بارگذاری خودکار PSR-4**: پشتیبانی از بارگذاری خودکار استاندارد Composer
+- ✅ **پوشش کامل API**: پشتیبانی کامل از تمام ویژگی‌های لایسنس اسپات پلیر شامل واترمارک، محدودیت دستگاه و کنترل دسترسی
+
+## 📦 نیازمندی‌ها
 
 - PHP >= 7.0
 - Composer
-- GuzzleHttp (automatically installed via Composer)
-- SpotPlayer API key (obtain from your SpotPlayer dashboard)
+- GuzzleHttp (به صورت خودکار از طریق Composer نصب می‌شود)
+- کلید API اسپات پلیر (از داشبورد اسپات پلیر خود دریافت کنید)
 
-## 🚀 Installation
 
-Install the package via Composer:
+</div>
+
+
+## 🚀 نصب
+
+پکیج را از طریق Composer نصب کنید:
 
 ```bash
 composer require abdal/spotplayer-php
 ```
 
-Or add it to your `composer.json`:
+یا آن را به `composer.json` خود اضافه کنید:
 
 ```json
 {
@@ -57,15 +65,15 @@ Or add it to your `composer.json`:
 }
 ```
 
-Then run:
+سپس اجرا کنید:
 
 ```bash
 composer install
 ```
 
-## 📖 How to Use the Software
+## 📖 نحوه استفاده از نرم‌افزار
 
-### Method 1: Using OOP Instance
+### روش 1: استفاده از نمونه OOP
 
 ```php
 <?php
@@ -74,10 +82,10 @@ require_once 'vendor/autoload.php';
 
 use Abdal\SpotPlayer\SpotPlayer;
 
-// Initialize with your API key
+// مقداردهی اولیه با کلید API شما
 $spotPlayer = new SpotPlayer('YOUR_API_KEY_HERE');
 
-// Create a simple license
+// ایجاد یک لایسنس ساده
 $licenseData = [
     'course' => ['5d2ee35bcddc092a304ae5eb'],
     'name' => 'customer-name',
@@ -95,11 +103,11 @@ echo "License Key: " . $result['key'] . "\n";
 echo "License URL: " . $result['url'] . "\n";
 ```
 
-### Method 2: Using Static Methods
+### روش 2: استفاده از متدهای استاتیک
 
-You can use static methods in two ways:
+می‌توانید از متدهای استاتیک به دو روش استفاده کنید:
 
-**Option A: Set API key first, then use static methods**
+**گزینه الف: تنظیم کلید API یک بار، سپس استفاده از متدهای استاتیک**
 
 ```php
 <?php
@@ -108,10 +116,10 @@ require_once 'vendor/autoload.php';
 
 use Abdal\SpotPlayer\SpotPlayer;
 
-// Set API key once
+// تنظیم کلید API یک بار
 SpotPlayer::setStaticApiKey('YOUR_API_KEY_HERE');
 
-// Use static methods (via __callStatic magic method)
+// استفاده از متدهای استاتیک (از طریق متد جادویی __callStatic)
 $licenseData = [
     'course' => ['5d2ee35bcddc092a304ae5eb'],
     'name' => 'customer-name',
@@ -125,7 +133,7 @@ $licenseData = [
 $result = SpotPlayer::createLicense($licenseData);
 ```
 
-**Option B: Pass API key directly to static method**
+**گزینه ب: ارسال مستقیم کلید API به متد استاتیک**
 
 ```php
 <?php
@@ -134,7 +142,7 @@ require_once 'vendor/autoload.php';
 
 use Abdal\SpotPlayer\SpotPlayer;
 
-// Pass API key directly to the method
+// ارسال مستقیم کلید API به متد
 $licenseData = [
     'course' => ['5d2ee35bcddc092a304ae5eb'],
     'name' => 'customer-name',
@@ -145,14 +153,14 @@ $licenseData = [
     ]
 ];
 
-// Using explicit static method
+// استفاده از متد استاتیک صریح
 $result = SpotPlayer::createLicenseStatic($licenseData, 'YOUR_API_KEY_HERE');
 
-// Or using magic method (same result)
+// یا استفاده از متد جادویی (نتیجه یکسان)
 $result = SpotPlayer::createLicense($licenseData, 'YOUR_API_KEY_HERE');
 ```
 
-### Creating a Test License
+### ایجاد لایسنس تستی
 
 ```php
 $testLicenseData = [
@@ -169,7 +177,7 @@ $testLicenseData = [
 $result = $spotPlayer->createLicense($testLicenseData);
 ```
 
-### Creating a Full-Featured License
+### ایجاد لایسنس با ویژگی‌های کامل
 
 ```php
 $fullLicenseData = [
@@ -202,8 +210,8 @@ $fullLicenseData = [
         ]
     ],
     'device' => [
-        'p0' => 1,  // All Devices
-        'p1' => 1,  // Windows
+        'p0' => 1,  // تمام دستگاه‌ها
+        'p1' => 1,  // ویندوز
         'p2' => 0,  // MacOS
         'p3' => 0,  // Ubuntu
         'p4' => 0,  // Android
@@ -215,7 +223,7 @@ $fullLicenseData = [
 $result = $spotPlayer->createLicense($fullLicenseData);
 ```
 
-### Editing an Existing License
+### ویرایش لایسنس موجود
 
 ```php
 $licenseId = '5dcab540796f5d4d48a6570f';
@@ -228,91 +236,92 @@ $editData = [
         ]
     ],
     'device' => [
-        'p1' => 1  // Update only Windows device limit
+        'p1' => 1  // به‌روزرسانی فقط محدودیت دستگاه ویندوز
     ]
 ];
 
 $result = $spotPlayer->editLicense($licenseId, $editData);
 ```
 
-### Error Handling
+### مدیریت خطا
 
 ```php
 try {
     $result = $spotPlayer->createLicense($licenseData);
 } catch (\InvalidArgumentException $e) {
-    // Validation errors (missing required fields, etc.)
-    echo "Validation Error: " . $e->getMessage();
+    // خطاهای اعتبارسنجی (فیلدهای الزامی مفقود، و غیره)
+    echo "خطای اعتبارسنجی: " . $e->getMessage();
 } catch (\RuntimeException $e) {
-    // API request failures
-    echo "API Error: " . $e->getMessage();
+    // خطاهای درخواست API
+    echo "خطای API: " . $e->getMessage();
 }
 ```
 
-## 🔧 API Methods
+## 🔧 متدهای API
 
-### `createLicense(array $licenseData, string|null $apiKey = null): array` (Instance Method)
+### `createLicense(array $licenseData, string|null $apiKey = null): array` (متد نمونه)
 
-Creates a new license in SpotPlayer. Can be called on an instance.
+یک لایسنس جدید در اسپات پلیر ایجاد می‌کند. می‌تواند روی یک نمونه فراخوانی شود.
 
-### `createLicenseStatic(array $licenseData, string|null $apiKey = null): array` (Static Method)
+### `createLicenseStatic(array $licenseData, string|null $apiKey = null): array` (متد استاتیک)
 
-Creates a new license in SpotPlayer. Can be called statically. You can also use `SpotPlayer::createLicense()` which will automatically call this method via `__callStatic`.
+یک لایسنس جدید در اسپات پلیر ایجاد می‌کند. می‌تواند به صورت استاتیک فراخوانی شود. همچنین می‌توانید از `SpotPlayer::createLicense()` استفاده کنید که به صورت خودکار این متد را از طریق `__callStatic` فراخوانی می‌کند.
 
-**Required Fields:**
-- `course` (array): Array of course IDs
-- `name` (string): Customer name
-- `watermark.texts` (array): Array of watermark text objects
-  - `watermark.texts[].text` (string): Watermark text (required)
+**فیلدهای الزامی:**
+- `course` (array): آرایه شناسه‌های دوره
+- `name` (string): نام مشتری
+- `watermark.texts` (array): آرایه اشیاء متن واترمارک
+  - `watermark.texts[].text` (string): متن واترمارک (الزامی)
 
-**Optional Fields:**
-- `test` (bool): Set to `true` for test licenses
-- `offline` (int): Offline access days (0-365)
-- `payload` (string): Custom payload data
-- `data` (array): License data including limits and configurations
-- `watermark` (array): Full watermark configuration
-- `device` (array): Device access limits
+**فیلدهای اختیاری:**
+- `test` (bool): برای لایسنس‌های تستی روی `true` تنظیم کنید
+- `offline` (int): روزهای دسترسی آفلاین (0-365)
+- `payload` (string): داده‌های payload سفارشی
+- `data` (array): داده‌های لایسنس شامل محدودیت‌ها و پیکربندی‌ها
+- `watermark` (array): پیکربندی کامل واترمارک
+- `device` (array): محدودیت‌های دسترسی دستگاه
 
-**Returns:** Array containing `_id`, `key`, and `url`
+**بازگشت:** آرایه حاوی `_id`، `key` و `url`
 
-### `editLicense(string $licenseId, array $licenseData, string|null $apiKey = null): array` (Instance Method)
+### `editLicense(string $licenseId, array $licenseData, string|null $apiKey = null): array` (متد نمونه)
 
-Edits an existing license. Can be called on an instance. Only provided fields will be updated.
+یک لایسنس موجود را ویرایش می‌کند. می‌تواند روی یک نمونه فراخوانی شود. فقط فیلدهای ارائه شده به‌روزرسانی می‌شوند.
 
-### `editLicenseStatic(string $licenseId, array $licenseData, string|null $apiKey = null): array` (Static Method)
+### `editLicenseStatic(string $licenseId, array $licenseData, string|null $apiKey = null): array` (متد استاتیک)
 
-Edits an existing license. Can be called statically. You can also use `SpotPlayer::editLicense()` which will automatically call this method via `__callStatic`. Only provided fields will be updated.
+یک لایسنس موجود را ویرایش می‌کند. می‌تواند به صورت استاتیک فراخوانی شود. همچنین می‌توانید از `SpotPlayer::editLicense()` استفاده کنید که به صورت خودکار این متد را از طریق `__callStatic` فراخوانی می‌کند. فقط فیلدهای ارائه شده به‌روزرسانی می‌شوند.
 
-**Parameters:**
-- `$licenseId` (string): The license ID to edit
-- `$licenseData` (array): Fields to update
-- `$apiKey` (string|null): Optional API key
+**پارامترها:**
+- `$licenseId` (string): شناسه لایسنس برای ویرایش
+- `$licenseData` (array): فیلدهای برای به‌روزرسانی
+- `$apiKey` (string|null): کلید API اختیاری
 
-**Returns:** Updated license data
+**بازگشت:** داده‌های لایسنس به‌روزرسانی شده
 
-## 🐛 Reporting Issues
+## 🐛 گزارش مشکلات
 
-If you encounter any issues or have configuration problems, please reach out via email at **Prof.Shafiei@Gmail.com**. You can also report issues on [GitLab](https://gitlab.com/ebrasha) or [GitHub](https://github.com/ebrasha/abdal-spotplayer-php).
+اگر با مشکلی مواجه شدید یا در پیکربندی مشکل دارید، لطفاً از طریق ایمیل **Prof.Shafiei@Gmail.com** با ما در تماس باشید. همچنین می‌توانید مشکلات را در [GitLab](https://gitlab.com/ebrasha) یا [GitHub](https://github.com/ebrasha/abdal-spotplayer-php) گزارش دهید.
 
-## ❤️ Donation
+## ❤️ حمایت مالی
 
-If you find this project helpful and would like to support further development, please consider making a donation:
-- [Donate Here](https://alphajet.ir/abdal-donation)
+اگر این پروژه برای شما مفید بود و مایل به حمایت از توسعه بیشتر هستید، لطفاً در نظر داشته باشید که کمک مالی کنید:
+- [اینجا اهدا کنید](https://alphajet.ir/abdal-donation)
 
-## 🤵 Programmer
+## 🤵 برنامه‌نویس
 
-Handcrafted with Passion by **Ebrahim Shafiei (EbraSha)**
+ساخته شده با عشق توسط **ابراهیم شفیعی (EbraSha)**
 
-- **E-Mail**: [Prof.Shafiei@Gmail.com](mailto:Prof.Shafiei@Gmail.com)
+- **ایمیل**: [Prof.Shafiei@Gmail.com](mailto:Prof.Shafiei@Gmail.com)
 - **GitHub**: [@ebrasha](https://github.com/ebrasha)
 - **Twitter/X**: [@ProfShafiei](https://x.com/ProfShafiei)
 - **LinkedIn**: [profshafiei](https://www.linkedin.com/in/profshafiei/)
-- **Telegram**: [@ProfShafiei](https://t.me/ProfShafiei)
+- **تلگرام**: [@ProfShafiei](https://t.me/ProfShafiei)
 
-## 📜 License
+## 📜 مجوز
 
-This project is licensed under the **GPL-2.0-or-later** License.
+این پروژه تحت مجوز **GPL-2.0-or-later** منتشر شده است.
 
 ---
 
-**Note**: This package is an independent PHP client for SpotPlayer API and is not officially affiliated with SpotPlayer. Make sure you have a valid SpotPlayer account and API key before using this package.
+**توجه**: این پکیج یک کلاینت مستقل PHP برای API اسپات پلیر است و به طور رسمی وابسته به اسپات پلیر نیست. قبل از استفاده از این پکیج، مطمئن شوید که یک حساب کاربری و کلید API معتبر اسپات پلیر دارید.
+
